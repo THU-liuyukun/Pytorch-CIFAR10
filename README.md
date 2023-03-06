@@ -34,7 +34,7 @@ The training results of the structure-of-CIFAR10-quick-model are okay, and the m
 
 ### Indices corresponding to ten types of objects
 
-![Ten classes](D:\pycharm\Structure-of-CIFAR10-quick-model\cifar10\classes.png)
+![Ten classes](.\cifar10\classes.png)
 
 ## Introduction
 
@@ -44,13 +44,13 @@ The dataset is divided into five training batches and one test batch, each with 
 
 Here are the classes in the dataset, as well as 10 random images from each:
 
-![10 classes](D:\pycharm\Structure-of-CIFAR10-quick-model\cifar10\10%20classes.png)
+![10 classes](.\cifar10\10%20classes.png)
 
 The classes are completely mutually exclusive. There is no overlap between automobiles and trucks. "Automobile" includes sedans, SUVs, things of that sort. "Truck" includes only big trucks. Neither includes pickup trucks.
 
 ## Structure-of-CIFAR10-quick-model
 
-![Structure-of-CIFAR10-quick-model](D:\pycharm\Structure-of-CIFAR10-quick-model\cifar10\Structure-of-CIFAR10-quick-model.png)
+![Structure-of-CIFAR10-quick-model](.\cifar10\Structure-of-CIFAR10-quick-model.png)
 
 ## Calculation formula
 
@@ -58,11 +58,11 @@ The classes are completely mutually exclusive. There is no overlap between autom
 
 This formula is used to calculate the padding value in a convolution operation
 
-![Calculation formula](D:\pycharm\Structure-of-CIFAR10-quick-model\cifar10\Calculation%20formula.png)
+![Calculation formula](.\cifar10\Calculation%20formula.png)
 
 Calculate the padding value：
 
-![Calculation](D:\pycharm\Structure-of-CIFAR10-quick-model\cifar10\Calculation%20.png)
+![Calculation](.\cifar10\Calculation%20.png)
 
 Stride can only be 1, otherwise the value of padding is too large. 
 
@@ -74,24 +74,24 @@ With the help of tensorboard
 
 ### Train_loss
 
-![train_loss](D:\pycharm\Structure-of-CIFAR10-quick-model\cifar10\train_loss.png)
+![train_loss](.\cifar10\train_loss.png)
 
 ### Test_loss
 
-![test_loss](D:\pycharm\Structure-of-CIFAR10-quick-model\cifar10\test_loss.png)
+![test_loss](.\cifar10\test_loss.png)
 
 ### Test_accuracy
 
-![test_accuracy](D:\pycharm\Structure-of-CIFAR10-quick-model\cifar10\test_accuracy.png)
+![test_accuracy](.\cifar10\test_accuracy.png)
 
 ### Network structure
 
-![1](D:\pycharm\Structure-of-CIFAR10-quick-model\cifar10\1.png)
+![1](.\cifar10\1.png)
 
-![2](D:\pycharm\Structure-of-CIFAR10-quick-model\cifar10\2.png)
+![2](.\cifar10\2.png)
 
-![3](D:\pycharm\Structure-of-CIFAR10-quick-model\cifar10\3.png)
+![3](.\cifar10\3.png)
 
-![4](D:\pycharm\Structure-of-CIFAR10-quick-model\cifar10\4.png)
+![4](.\cifar10\4.png)
 
-![](D:\pycharm\Structure-of-CIFAR10-quick-model\cifar10\5.png)
+![](.\cifar10\5.png)
