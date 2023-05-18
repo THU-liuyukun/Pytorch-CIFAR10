@@ -1,8 +1,10 @@
 # Pytorch-CIFAR10
 
-Implement the structure-of-CIFAR10-quick-model using pytorch
+## 0. 介绍
 
-## Requirement
+使用 pytorch 实现 structure-of-CIFAR10-quick-model
+
+## 1. 依赖
 
 - torch~=1.10.0+cu102
 
@@ -10,81 +12,80 @@ Implement the structure-of-CIFAR10-quick-model using pytorch
 
 - pillow~=9.2.0
 
-## Usage
+## 2. 使用
 
-1. If your computer has a GPU, run the file **GPU_train.py**，Otherwise, run the file **CPU_train.py**.
+1. 如果你的电脑有 GPU，运行文件GPU_train.py，否则，运行文件CPU_train.py。
 
-2. You can set the epoch in the code yourself to get the generated model.
+2. 你可以设置代码中的epoch来生成的模型。
    
-   > I set the epoch value to 30
+   > 我将epoch的值设为30
 
-3. Select the model with the highest test_accuary and load it into the Test.py for testing
+3. 选择test_accuary最高的模型加载到Test.py中进行测试。
 
-Running the code automatically downloads the dataset from the [official website]([CIFAR-10 and CIFAR-100 datasets (toronto.edu)](https://www.cs.toronto.edu/~kriz/cifar.html)) to your local computer.
+运行代码会自动从[CIFAR-10 and CIFAR-100 datasets (toronto.edu)](https://www.cs.toronto.edu/~kriz/cifar.html)下载数据集。
 
-After training and testing, a logs folder is generated. Use the following instructions in the terminal to be able to visualize
+经过训练和测试后，目录中会生成一个logs文件夹。在终端中使用以下指令可以可视化：
 
 ```
 tensorboard --logdir=logs
 ```
 
-## Result
+## 3. 数据集介绍
 
-The training results of the structure-of-CIFAR10-quick-model are okay, and the model obtained through 30 rounds of training can have a maximum test_accuracy of 65.47%
+CIFAR-10 数据集由 10 个类别的 60000 张 32x32 彩色图像组成，每个类别有 6000 张图像。有50000张训练图像和10000张测试图像。
 
-### Indices corresponding to ten types of objects
+数据集分为5个训练批次和1个测试批次，每个批次有 10000 张图像。测试批次恰好包含从每个类别中随机选择的 1000 张图像。训练批次包含随机顺序的剩余图像，但一些训练批次可能包含来自一个类别的图像多于另一个类别。在它们之间，训练批次恰好包含来自每个类别的 5000 张图像。
 
-![Ten classes](/cifar10/classes.png)
-
-## Introduction
-
-The CIFAR-10 dataset consists of 60000 32x32 colour images in 10 classes, with 6000 images per class. There are 50000 training images and 10000 test images.  
-
-The dataset is divided into five training batches and one test batch, each with 10000 images. The test batch contains exactly 1000 randomly-selected images from each class. The training batches contain the remaining images in random order, but some training batches may contain more images from one class than another. Between them, the training batches contain exactly 5000 images from each class.
-
-Here are the classes in the dataset, as well as 10 random images from each:
+以下是数据集中的类别，以及每个类别的 10 张随机图像：
 
 ![10 classes](/cifar10/10%20classes.png)
 
-The classes are completely mutually exclusive. There is no overlap between automobiles and trucks. "Automobile" includes sedans, SUVs, things of that sort. "Truck" includes only big trucks. Neither includes pickup trucks.
+这些类是完全互斥的。汽车和卡车之间没有重叠。“汽车”包括轿车、SUVs 之类的东西。“卡车”仅包括大卡车。两者都不包括皮卡车。
 
-## Structure-of-CIFAR10-quick-model
+### 3.1 十类对象对应的索引
+
+![Ten classes](/cifar10/classes.png)
+
+## 4. Structure-of-CIFAR10-quick-model
 
 ![Structure-of-CIFAR10-quick-model](/cifar10/Structure-of-CIFAR10-quick-model.png)
 
-## Calculation formula
+## 5. 计算公式
 
-[It is available in the official pytorch documentation]([Conv2d — PyTorch 1.13 documentation](https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html#torch.nn.Conv2d))
+[Conv2d — PyTorch 1.13 documentation](https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html#torch.nn.Conv2d)
 
 This formula is used to calculate the padding value in a convolution operation
+此公式可用于计算卷积运算中的padding
 
 ![Calculation formula](/cifar10/Calculation%20formula.png)
 
-Calculate the padding value：
+计算padding：
 
 ![Calculation](/cifar10/Calculation%20.png)
 
-Stride can only be 1, otherwise the value of padding is too large. 
+stride只能为1，否则padding的值太大。
 
-Thus stride=1, padding=2
+因此stride=1，padding=2
 
-## The result after model training
+## 6. 结果
 
-With the help of tensorboard
+structure-of-CIFAR10-quick-model的训练结果还可以，经过30轮训练得到的模型最大test_accuracy可以达到65.47%
 
-### Train_loss
+### 6.1 使用tensorboard可视化
+
+#### 6.1.1 Train_loss
 
 ![train_loss](/cifar10/train_loss.png)
 
-### Test_loss
+#### 6.1.2 Test_loss
 
 ![test_loss](/cifar10/test_loss.png)
 
-### Test_accuracy
+#### 6.1.3 Test_accuracy
 
 ![test_accuracy](/cifar10/test_accuracy.png)
 
-### Network structure
+#### 6.1.4 Network structure
 
 ![1](/cifar10/1.png)
 
